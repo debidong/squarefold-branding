@@ -1,0 +1,35 @@
+{
+  "name": "squarefold-branding",
+  "version": "1.0.0",
+  "brand": "Square Fold",
+  "fonts": {
+    "googleFontsHref": "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fira+Code:wght@400;500&family=Instrument+Serif&family=Noto+Sans+SC:wght@400;500;700&display=swap",
+    "brand": "\"Instrument Serif\", serif",
+    "sans": "\"Archivo\", \"Noto Sans SC\", system-ui, sans-serif",
+    "mono": "\"Fira Code\", ui-monospace, \"SFMono-Regular\", Menlo, monospace"
+  },
+  "palette": {
+    "paper": { "oklch": "oklch(0 0 0)", "hex": "#000000" },
+    "paper2": { "oklch": "oklch(0.16 0 0)", "hex": "#0E0E0E" },
+    "ink": { "oklch": "oklch(0.98 0 0)", "hex": "#FAFAFA" },
+    "muted": { "oklch": "oklch(0.70 0 0)", "hex": "#9E9E9E" },
+    "faint": { "oklch": "oklch(0.48 0 0)", "hex": "#5E5E5E" },
+    "line": { "oklch": "oklch(0.30 0 0)", "hex": "#2E2E2E" },
+    "lineSoft": { "oklch": "oklch(0.20 0 0)", "hex": "#171717" },
+    "accent": { "oklch": "oklch(0.87 0.19 99)", "hex": "#ECD32D" }
+  },
+  "mark": {
+    "shape": "slanted-blade",
+    "angleDeg": 16,
+    "widthEm": 0.206,
+    "heightEm": 0.297,
+    "gapEm": 0.103,
+    "overhangKernEm": -0.045,
+    "overhangEndings": ["r", "f", "v", "w", "y"]
+  },
+  "assets": {
+    "css": "assets/brand.css",
+    "favicon": "assets/favicon.svg",
+    "specimen": "preview/specimen.png"
+  }
+}

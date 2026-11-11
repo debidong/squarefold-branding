@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Square Fold — Brand System</title>
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fira+Code:wght@400;500&family=Instrument+Serif&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/brand.css">
+<style>
+  :root {
+    --site-width: min(1080px, calc(100% - 4rem));
+  }
+  .spec-stack {
+    display: grid;
+    gap: 3.4rem;
+  }
+  .mark-showcase {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: start;
+  }
+  .spec-box {
+    border-top: 1px solid var(--line-soft);
+    padding-top: 1rem;
+  }
+  .spec-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--faint);
+    margin-bottom: 1.1rem;
+  }
+  .spec-caption {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+  .fav-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.4rem 0 0.2rem;
+  }
+  .fav-frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    background: var(--paper-2);
+  }
+  .fav-frame.lg { width: 56px; height: 56px; }
+  .fav-frame.md { width: 32px; height: 32px; }
+  .fav-frame.sm { width: 20px; height: 20px; }
+
+  .swatches {
+    margin-top: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+  .swatch {
+    border: 1px solid var(--line);
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .swatch-chip {
+    height: 44px;
+    border: 1px solid var(--line-soft);
+  }
+  .swatch-meta {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .swatch-meta strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .type-rows {
+    margin-top: 1.4rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .type-row {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: baseline;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .type-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .type-spec {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--faint);
+    line-height: 1.55;
+  }
+  .t-serif {
+    font-family: var(--brand-font);
+    font-size: 2.6rem;
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .t-nav {
+    font-family: var(--font-sans);
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+  }
+  .t-body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 40rem;
+  }
+  .t-mono {
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .code-block {
+    margin-top: 1.2rem;
+    padding: 1rem 1.15rem;
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--ink);
+    overflow-x: auto;
+  }
+
+  @media (max-width: 860px) {
+    .mark-showcase { grid-template-columns: 1fr; }
+    .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .type-row { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="site">
+  <header class="sidebar">
+    <a class="brand" href="#mark" aria-label="Square Fold Brand">
+      <span class="brand-line">Brand</span>
+      <span class="brand-row"><span class="brand-line">System</span><i class="brand-mark" aria-hidden="true"></i></span>
+    </a>
+    <nav class="nav" aria-label="Specimen sections">
+      <a class="nav-item active" href="#mark">mark</a>
+      <a class="nav-item" href="#tokens">tokens</a>
+      <a class="nav-item" href="#type">type</a>
+      <a class="nav-item" href="#skill">skill</a>
+    </nav>
+  </header>
+
+  <main class="page spec-stack">
+    <section id="mark">
+      <div class="section-bar">
+        <h1 class="section-title">标志与光学字距</h1>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+      <p class="section-desc">双行 Instrument Serif 刊头搭配右倾 16° 的黄色斜切刀片（em 等比缩放）。结尾遇到 r、f、y 等右上悬空字母时启用 data-kern="overhang" 收紧 0.045em。</p>
+
+      <div class="mark-showcase">
+        <div class="spec-box">
+          <span class="spec-label">MAIN SITE · 竖干结尾 (d)</span>
+          <div class="brand" style="margin-bottom:0">
+            <span class="brand-line">Square</span>
+            <span class="brand-row"><span class="brand-line">Fold</span><i class="brand-mark" aria-hidden="true"></i></span>
+          </div>
+          <p class="spec-caption">默认字距 <code>--mark-gap: 0.103em</code>，平底紧贴字母基线。</p>
+        </div>
+
+        <div class="spec-box">
+          <span class="spec-label">SIBLING SITE · 悬空弯钩结尾 (r)</span>
+          <div class="brand" data-kern="overhang" style="margin-bottom:0">
+            <span class="brand-line">Fore</span>
+            <span class="brand-row"><span class="brand-line">caster</span><i class="brand-mark" aria-hidden="true"></i></span>
+          </div>
+          <p class="spec-caption">声明 <code>data-kern="overhang"</code>，自动补入 <code>-0.045em</code> 光学负字距。</p>
+        </div>
+
+        <div class="spec-box">
+          <span class="spec-label">FAVICON · 32×32 SVG</span>
+          <div class="fav-row">
+            <span class="fav-frame lg"><img src="./assets/favicon.svg" width="36" height="36" alt="Favicon 36px"></span>
+            <span class="fav-frame md"><img src="./assets/favicon.svg" width="20" height="20" alt="Favicon 20px"></span>
+            <span class="fav-frame sm"><img src="./assets/favicon.svg" width="14" height="14" alt="Favicon 14px"></span>
+          </div>
+          <p class="spec-caption">几何重心精确落在 <code>(16, 16)</code>，全站与子站统一使用同一枚斜切刀片图标。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tokens">
+      <div class="section-bar">
+        <h2 class="section-title">色彩规范</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+      <p class="section-desc">纯黑画布配单一信号黄，靠留白与 1px 细灰线分区，不使用卡片阴影、渐变底色或第二种强调色。</p>
+
+      <div class="swatches">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:var(--paper)"></div>
+          <div class="swatch-meta"><strong>--paper</strong>oklch(0 0 0) · #000000</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:var(--accent)"></div>
+          <div class="swatch-meta"><strong>--accent</strong>oklch(0.87 0.19 99) · #ECD32D</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:var(--ink)"></div>
+          <div class="swatch-meta"><strong>--ink</strong>oklch(0.98 0 0) · #FAFAFA</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-chip" style="background:var(--muted)"></div>
+          <div class="swatch-meta"><strong>--muted</strong>oklch(0.70 0 0) · #9E9E9E</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="type">
+      <div class="section-bar">
+        <h2 class="section-title">字体阶梯</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+      <div class="type-rows">
+        <div class="type-row">
+          <div class="type-spec">Instrument Serif<br>3.1rem · 600</div>
+          <div class="t-serif">Square Fold · Forecaster</div>
+        </div>
+        <div class="type-row">
+          <div class="type-spec">Archivo Bold<br>1.84rem · -0.05em</div>
+          <div class="t-nav"><span style="color:var(--accent)">daily</span> &nbsp; quarterly &nbsp; about</div>
+        </div>
+        <div class="type-row">
+          <div class="type-spec">Archivo + Noto Sans SC<br>17px · 1.65–1.76</div>
+          <div class="t-body">云服务不是一手交钱一手交货，大企业通常会一次签下三五年的合同，再按月慢慢用、慢慢付钱。</div>
+        </div>
+        <div class="type-row">
+          <div class="type-spec">Fira Code<br>tabular-nums</div>
+          <div class="t-mono">6,770 <span style="font-size:0.92rem;color:var(--muted);font-family:var(--font-sans)">亿美元</span> &nbsp;·&nbsp; 2026-11-11</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skill">
+      <div class="section-bar">
+        <h2 class="section-title">Agent Skill 接入</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+      <p class="section-desc">遵循开放的 Agent Skills 标准（SKILL.md + references/ + assets/），Claude Code、Codex、Cursor、Antigravity 均可直接加载。</p>
+      <pre class="code-block"><code># 安装到全局 Agent Skills 目录
+npx skills add debidong/squarefold-branding
+
+# 或将本地克隆软链到 ~/.agents/skills/
+ln -s /path/to/squarefold-branding ~/.agents/skills/squarefold-branding
+
+# 将标准 brand.css 与 favicon.svg 同步到任意子项目（自动识别 Hugo 或静态页）
+~/.agents/skills/squarefold-branding/scripts/sync-assets.sh ./my-project</code></pre>
+    </section>
+  </main>
+</div>
+<script>
+  const navLinks = [...document.querySelectorAll('.nav-item')];
+  window.addEventListener('hashchange', () => {
+    const h = location.hash || '#mark';
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === h));
+  });
+</script>
+</body>
+</html>
