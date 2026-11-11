@@ -33,7 +33,7 @@ Defined in `em` so desktop (`3.1rem`) and mobile (`2.1rem`) scale in exact locks
 
 - `width: 0.206em` (`~10.2px` at `3.1rem`)
 - `height: 0.297em` (`~14.7px` at `3.1rem`)
-- `transform: skewX(-16deg)` with `transform-origin: bottom left`
+- `transform: translateY(0.022em) skewX(-16deg)` with `transform-origin: bottom left` (`0.022em` compensates for synthetic-bold `600` ink dilation below the nominal alphabetic baseline on Retina displays, paired with `align-items: baseline` on `.brand-row`)
 - `margin-left: calc(var(--mark-gap) + var(--mark-kern))` where `--mark-gap: 0.103em` and overhang `--mark-kern: -0.045em`
 
 ## Favicon (`assets/favicon.svg`)
